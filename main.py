@@ -189,6 +189,7 @@ def generate_dual_view(polynom: np.poly1d, field: GF, mnozhitel: np.poly, variab
 
 def generate_dual_views(polynom: np.poly1d, field: GF, mnozhitel: np.poly, variable: str, parametr: int):
     base_poly = basic_polynom(polynom, field, variable)
+    print(polynom)
     dual_view = []
     counter = 0
     current_poly = 0
@@ -288,7 +289,7 @@ if __name__ == '__main__':
         print("x^"+str(steps-i) + "*", end="")
         elem_poly = int(input())
         poly_arr.append(elem_poly)
-    poly_arr = poly_arr[::-1]
+    # poly_arr = poly_arr[::-1]
     print("\033[34m ENTER a-ELEM: \033[0ma + ", end="")
     premitiv = int(input())
 
@@ -298,15 +299,8 @@ if __name__ == '__main__':
         generate_dual_view(inputing.polynom, inputing.field, np.poly1d([1, 0], variable="x"), "x")
     else:
         generate_dual_views(inputing.polynom, inputing.field, np.poly1d([1, 0], variable="x"), "x", inputing.parametr)
-    # polynom = np.poly1d([1, 1, 1], variable="x")
-    # gf = GF(5, 2)
-    # generate_dual_view(polynom, gf, np.poly1d([1, 0], variable="x"), "x")
 
-    # x = sp.Symbol('x')
-    # a = eval('(x+2)**2 + 1')
-    # print(str(a.expand()))
 
-    # polynom1 = np.poly1d([1, 0, 1])
-    # print(polynom1)
-    # print(converter_polynomov(polynom1, 0))
-    # x**2 + 2*x + 1
+
+
+    input()
